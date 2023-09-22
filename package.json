@@ -1,0 +1,21 @@
+{
+  "name": "workout_buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd ./backend && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKira-Stardust/Workout_Buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AKira-Stardust/Workout_Buddy/issues"
+  },
+  "homepage": "https://github.com/AKira-Stardust/Workout_Buddy#readme"
+}
