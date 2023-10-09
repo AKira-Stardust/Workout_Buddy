@@ -21,7 +21,8 @@ const createWorkout = async (req, res) => {
     }
 
     try{
-        const workout_item = await Workout.create({ title, reps, load })
+        const user_id = req.user._id
+        const workout_item = await Workout.create({ title, reps, load, user_id })
         if(workout_item){
             res.status(200).json(workout_item)
         }
@@ -33,7 +34,8 @@ const createWorkout = async (req, res) => {
 // GET all workouts
 const getWorkouts = async (req, res) => {
     try{
-        const workouts = await Workout.find({}).sort({createdAt: -1})
+        const user_id = req.user._id
+        const workouts = await Workout.find({ user_id }).sort({createdAt: -1})
         res.status(200).json(workouts)
     } catch(err) {
         res.status(400).json({'error': err.message})

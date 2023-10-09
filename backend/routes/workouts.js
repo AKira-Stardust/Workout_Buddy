@@ -2,6 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 const Workout = require('../models/workoutModel')
+const requireAuth = require('../middleware/requireAuth')
 
 const {
     createWorkout,
@@ -10,6 +11,9 @@ const {
     deleteWorkout,
     updateWorkout
 } = require('../controllers/workoutController')
+
+// Get Middleware to validate authentication
+router.use(requireAuth)
 
 // GET request
 router.get('/', getWorkouts)
